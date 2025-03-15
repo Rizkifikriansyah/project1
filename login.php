@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 $_SESSION['status_login'] = true;
-
 include 'koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $result = $stmt->get_result();
 
- 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         
